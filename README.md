@@ -1,9 +1,9 @@
-# [Plugin] Addon bare-bones
+# [Behavior] Addon bare-bones
 
-There is a Lost bare-bones project for 'plugin' addon type.
+There is a Lost bare-bones project for 'behavior' addon type.
 
 <!-- ## Installation
-Use `lost create --plugin` -->
+Use `lost create --behavior` -->
 
 ## Development
 - Use `deno task build` OR `lost build` to build addon.
