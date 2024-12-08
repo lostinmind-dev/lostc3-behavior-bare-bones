@@ -1,12 +1,10 @@
-
-import type { Instance } from "./Instance.ts";
-
-const C3 = globalThis.C3;
-
-C3.Behaviors[Config.AddonId].Type = class LostBehaviorType extends globalThis.ISDKBehaviorTypeBase<Instance> {
+class LostBehaviorType extends globalThis.ISDKBehaviorTypeBase {
 	constructor() {
 		super();
 	}
 	
 	_onCreate() {}
 };
+
+/** Important to save export type for Typescript compiler */
+export type { LostBehaviorType };

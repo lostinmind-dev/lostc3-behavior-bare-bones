@@ -1,23 +1,22 @@
-import { type LostConfig, STABLE, BETA, LTS } from "jsr:@lost-c3/lib@1.2.5";
+import { defineConfig } from './deps.ts'
 
-const Config: LostConfig<'behavior'> = {
-    Type: 'behavior',
-    Deprecated: false,
+export default defineConfig<'behavior'>({
+    type: 'behavior',
+    // deprecated?: boolean;
+    // minConstructVersion?: string;
+    // canBeBundled?: boolean;
+    isOnlyOneAllowed: true,
+    objectName: 'LostBehavior',
 
-    SupportsWorkerMode: false,
-    // MinConstructVersion: STABLE.R407_2,
-    CanBeBundled: false,
-    IsOnlyOneAllowed: true,
-
-    ObjectName: 'LostPluginName',
-    AddonId: 'Lost_MyAddon',
-    AddonName: 'Lost addon for Construct 3',
-    AddonDescription: 'Amazing addon made with Lost.',
-    Category: 'general',
-    Version: '1.0.0.0',
-    Author: 'lostinmind.',
-    WebsiteURL: `https://addon.com`,
-    DocsURL: `https://docs.addon.com`
-};
-
-export default Config;
+    addonId: 'LostBehaviorId',
+    category: 'general',
+    addonName: 'Lost behavior for Construct 3',
+    addonDescription: 'My awesome addon was made with Lost',
+    version: '1.0.0.0',
+    author: 'lostinmind.',
+    docsUrl: 'https://myaddon.com/docs',
+    helpUrl: {
+        EN: 'https://myaddon.com/help/en'
+    },
+    websiteUrl: 'https://myaddon.com'
+})

@@ -1,16 +1,16 @@
-
-const C3 = globalThis.C3;
-
 class LostBehaviorInstance extends globalThis.ISDKBehaviorInstanceBase<IWorldInstance> {
 
-	readonly PluginConditions = C3.Plugins[Config.AddonId].Cnds;
+	/** Use this for triggering plugin conditions */
+	readonly Conditions = C3.Behaviors[Lost.addonId].Cnds;
+
 	constructor() {
 		super();
-		const properties = this._getInitProperties();
+		/**
+		 * Use auto-created declaration file for your plugin properties after build
+		 * @type {PluginProperties}
+		 */
+		const properties = this._getInitProperties() as PluginProperties;
 
-        if (properties) {
-
-        }
 
 		// Opt-in to getting calls to _tick()
 		//this._setTicking(true);
@@ -20,8 +20,7 @@ class LostBehaviorInstance extends globalThis.ISDKBehaviorInstanceBase<IWorldIns
 		super._release();
 	}
 
-	_tick()
-	{
+	_tick() {
 		const dt = this.instance.dt;
 		
 		// ... code to run every tick for this behavior ...
@@ -29,5 +28,5 @@ class LostBehaviorInstance extends globalThis.ISDKBehaviorInstanceBase<IWorldIns
 	
 };
 
-C3.Behaviors[Config.AddonId].Instance = LostBehaviorInstance;
+/** Important to save export type for Typescript compiler */
 export type { LostBehaviorInstance as Instance };
